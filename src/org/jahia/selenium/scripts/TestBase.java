@@ -11,8 +11,9 @@ import org.testng.annotations.BeforeTest;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Base class for tests
- * Edit this class if you want to use a different WebDriver, if you want to take screenshot on failure
+ * Base for test classes
+ * Edit this class if you want to use a different WebDriver or if you want to add any feature to your tests
+ * (eg. take a screenshot on failure)
  */
 public class TestBase {
     protected WebDriver driver;
@@ -34,7 +35,8 @@ public class TestBase {
     }
 
     /**
-     * This method is called after every method tagged with @Test and before @AfterClass. Use it to take a screenshot if a test fail, to add logs, etc.
+     * This method is called after every method tagged with @Test and before @AfterClass.
+     * Use it to take a screenshot if a test fail, to add logs, etc.
      * @param _result
      */
     @AfterMethod(alwaysRun=true)
@@ -46,7 +48,7 @@ public class TestBase {
                 if (!_result.isSuccess()) {
                     //Code to execute if the test failed
                 } else{
-                    // Code to execute if the test is successfull
+                    //Code to execute if the test was successful
                 }
             }
         } finally {
